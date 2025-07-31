@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  width: 350px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tab {
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  background: #ddd;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px 5px 0 0;
+}
+
+#login:checked ~ .tab-buttons label[for="login"],
+#signup:checked ~ .tab-buttons label[for="signup"] {
+  background: #3498db;
+  color: white;
+}
+
+.form-area {
+  position: relative;
+  height: 260px;
+}
+
+.form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#login:checked ~ .form-area .login-form {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#signup:checked ~ .form-area .signup-form {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #2980b9;
+}
